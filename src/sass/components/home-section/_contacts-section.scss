@@ -26,6 +26,19 @@
         }      
     }
 
+    @keyframes changeColor {
+        0% {
+            color: var(--color-brand);
+        }
+      
+        50% {
+            color: var(--color-accent-secondary);
+        }
+      
+        100% {
+          color: var(--color-brand);
+        }
+      }
 
     &__title {
         font-family: 'Film P3';       
@@ -36,6 +49,16 @@
         line-height: 1.075;
         letter-spacing: 0.3em;
         color: var(--color-brand);
+
+        animation-name: changeColor;
+        animation-duration: 3000ms;
+        animation-timing-function: ease-in-out;      
+        animation-iteration-count: infinite;
+        
+
+        &:hover, &:focus {
+            color: var(--color-accent-secondary);
+        }
 
         @media screen and (min-width: $tablet) {
             font-size: 64px;
@@ -151,14 +174,18 @@
         align-items: center;
         width: 260px;
         height: 40px;
-        background-color: #FFFFFF;
-        border: 0.5px solid #F3C653;
+        background-color: var(--color-secondary);
+        border: 0.5px solid var(--color-accent);
         border-radius: 2px;
         padding-left: 8px;
         padding-right: 8px;
 
         @media screen and (min-width: $tablet) {
            width: 264px; 
+        }
+
+        &:hover, &:focus {
+            border-color: var(--color-accent-secondary);
         }
     }
 
@@ -173,6 +200,14 @@
         letter-spacing: 0.02em;
         color: var(--color-brand);
         text-decoration: none;
+
+        &:hover, &:focus {
+            color: var(--color-accent-secondary);
+            animation-name: changeColor;
+            animation-duration: 1000ms;
+            animation-timing-function: ease-in-out;      
+            animation-iteration-count: infinite;      
+        }
     }
 
     &__icon-c {
@@ -192,6 +227,10 @@
         border-radius: 2px;
         padding-left: 10px;
 
+        &:hover, &focus {
+            border-color: var(--color-accent-secondary);
+        }
+
         @media screen and (min-width: $tablet) {
             width: 285px;
             height: 56px;
@@ -208,7 +247,14 @@
         text-decoration: none;
         color: var(--color-brand);
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;
+        
+        &:hover, &:focus {
+            animation-name: changeColor;
+            animation-duration: 1000ms;
+            animation-timing-function: ease-in-out;      
+            animation-iteration-count: infinite;           
+        }      
     }
 
     &__address-dep {
